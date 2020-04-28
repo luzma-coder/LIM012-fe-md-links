@@ -17,15 +17,12 @@ y reportar algunas estadísticas.
 
 ### Pseudocodigo
 
-![evaluatePath](/screen/evaluatePath.png)
 ![searchLinks](/screen/searchLinks.png)
-![searchFiles](/screen/searchFiles.png)
 ![main](/screen/main.png)
 
 ### Diagrama de Flujo
 
-(https://drive.google.com/file/d/13vsty2aEfXALNUeJUDFX35g0SpVx5ybv/view?usp=sharing)
-
+![diagrama](/screen/mdLinks.jpg)
 
 ## 3. Documentación técnica
 

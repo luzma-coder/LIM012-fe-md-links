@@ -1,0 +1,23 @@
+{
+  "name": "LIM012-fe-md-links",
+  "version": "1.0.0",
+  "description": "Mostrar links de archivos MD",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luzma-coder/LIM012-fe-md-links.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luzma-coder/LIM012-fe-md-links/issues"
+  },
+  "homepage": "https://github.com/luzma-coder/LIM012-fe-md-links#readme"
+}
