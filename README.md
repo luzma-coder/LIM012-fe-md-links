@@ -5,54 +5,53 @@
 * [1. Definición](#1-definicion)
 * [2. Algoritmo](#2-algoritmo)
 * [3. Documentación técnica](#3-documentacion-tecnica)
-* [4. Objetivos de aprendizaje](#4-objetivos-de-aprendizaje)
+* [4. Guia de uso e instalación](#4-guia-de-uso-e-instalacion)
+* [5. Objetivos de aprendizaje](#5-objetivos-de-aprendizaje)
 
 
 ## 1. Definición
 
 Libreria que analiza archivos en formato `Markdown`, para verificar los links que contengan 
-y reportar algunas estadísticas.
+y reportar estadísticas.
 
 ## 2. Algoritmo
 
 ### Pseudocodigo
-
 ![searchLinks](/screen/searchLinks.png)
 ![main](/screen/main.png)
 
 ### Diagrama de Flujo
-
 ![diagrama](/screen/mdLinks.jpg)
+
+### Board
+[Board](https://github.com/luzma-coder/LIM012-fe-md-links/projects/1?fullscreen=true)
 
 ## 3. Documentación técnica
 
-### JavaScript API
+mdLinks Libreria ejecutada con Node.js
 
-Libreria ejecutada con Node.js
+#### `mdLinks(path, options)`
 
-```js
-const mdLinks = require("md-links");
+##### Argumentos
 
-mdLinks("./some/example.md")
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
+- `path`: Ruta absoluta o relativa al archivo o directorio.
+- `options`: Un objeto con la propiedad:
+  * `validate`: Booleano que determina si se desea validar los links
+    encontrados.
 
-mdLinks("./some/example.md", { validate: true })
-  .then(links => {
-    // => [{ href, text, file, status, ok }]
-  })
-  .catch(console.error);
+##### Valor de retorno
 
-mdLinks("./some/dir")
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
-```
+La función retorna una promesa (`Promise`) que resuelve a un arreglo de objetos, donde cada objeto representa un link y contiene las siguientes propiedades:
 
-### CLI (Command Line Interface - Interfaz de Línea de Comando)
+- `href`: URL encontrada.
+- `text`: Texto que aparecía dentro del link (`<a>`).
+- `file`: Ruta del archivo donde se encontró el link.
+
+## 4. Guia de uso e instalación
+
+### Guia de uso
+
+#### CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 `md-links <path-to-file> [options]`
 
@@ -63,14 +62,11 @@ $ md-links ./some/example.md
 ./some/example.md http://google.com/ Google
 ```
 
-Comportamiento por defecto identificar el archivo markdown (a partir de la ruta que recibe como argumento), analizar el archivo Markdown e imprimir los links que vaya encontrando, junto con la ruta del archivo donde aparece y el texto que hay dentro del link (truncado 
-a 50 caracteres).
-
 #### Options
 
 ##### `--validate`
 
-El módulo hace una petición HTTP para averiguar si el link funciona o no.k como ok.
+El módulo hace una petición HTTP para averiguar si el link funciona o no.
 
 ```sh
 $ md-links ./some/example.md --validate
@@ -78,10 +74,6 @@ $ md-links ./some/example.md --validate
 ./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc
 ./some/example.md http://google.com/ ok 301 Google
 ```
-
-El _output_ en este caso incluirá la palabra `ok` o `fail` después de
-la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
-URL.
 
 ##### `--stats`
 
@@ -102,41 +94,41 @@ Total: 3
 Unique: 3
 Broken: 1
 ```
+### Instalación
 
-## 4. Objetivos de aprendizaje
+npm install --global luzma-coder/md-links
 
-Recuerda colocar en esta seccion los objetivos de aprendizaje que quedaron 
-pendientes de tu proyecto anterior.
+## 5. Objetivos de aprendizaje
 
 ### Javascript
-- [ ] Uso de callbacks
+- [x] Uso de callbacks
 - [ ] Consumo de Promesas
 - [ ] Creacion de Promesas
-- [ ] Modulos de Js
-- [ ] Recursión
+- [x] Modulos de Js
+- [x] Recursión
 
 ### Node
-- [ ] Sistema de archivos
-- [ ] package.json
-- [ ] crear modules
-- [ ] Instalar y usar modules
-- [ ] npm scripts
-- [ ] CLI (Command Line Interface - Interfaz de Línea de Comando)
+- [x] Sistema de archivos
+- [x] package.json
+- [x] crear modules
+- [x] Instalar y usar modules
+- [x] npm scripts
+- [x] CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 ### Testing
-- [ ] Testeo de tus funciones
+- [x] Testeo de tus funciones
 - [ ] Testeo asíncrono
 - [ ] Uso de librerias de Mock
 - [ ] Mocks manuales
 - [ ] Testeo para multiples Sistemas Operativos
 
 ### Git y Github
-- [ ] Organización en Github
+- [x] Organización en Github
 
 ### Buenas prácticas de desarrollo
-- [ ] Modularización
-- [ ] Nomenclatura / Semántica
-- [ ] Linting
+- [x] Modularización
+- [x] Nomenclatura / Semántica
+- [x] Linting
 
 ***
 
