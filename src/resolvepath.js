@@ -1,9 +1,7 @@
 const path = require('path');
 
-const isPathAbsolute = (checkPath) => path.isAbsolute(checkPath);
-
 const Abs = (checkPath) => (
-  isPathAbsolute(checkPath) ? checkPath : path.resolve(checkPath));
+  (path.isAbsolute(checkPath)) ? checkPath : path.resolve(checkPath));
 
 const isFileMD = (checkPath) => {
   let rpta = false;

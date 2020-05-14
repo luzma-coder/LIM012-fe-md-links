@@ -1,11 +1,9 @@
 # Libreria md-links
 
-## Índice
-
 * [1. Definición](#1-definicion)
 * [2. Algoritmo](#2-algoritmo)
-* [3. Documentación técnica](#3-documentacion-tecnica)
-* [4. Guia de uso e instalación](#4-guia-de-uso-e-instalacion)
+* [3. Documentación técnica](#3-documentación-técnica)
+* [4. Guia de uso e instalación](#4-guía-de-uso-e-instalación)
 * [5. Objetivos de aprendizaje](#5-objetivos-de-aprendizaje)
 
 
@@ -23,8 +21,7 @@ y reportar estadísticas.
 ### Diagrama de Flujo
 ![diagrama](/screen/mdLinks.jpg)
 
-### Board
-[Board](https://github.com/luzma-coder/LIM012-fe-md-links/projects/1?fullscreen=true)
+### [Board](https://github.com/luzma-coder/LIM012-fe-md-links/projects/1?fullscreen=true)
 
 ## 3. Documentación técnica
 
@@ -47,9 +44,9 @@ La función retorna una promesa (`Promise`) que resuelve a un arreglo de objetos
 - `text`: Texto que aparecía dentro del link (`<a>`).
 - `file`: Ruta del archivo donde se encontró el link.
 
-## 4. Guia de uso e instalación
+## 4. Guía de uso e instalación
 
-### Guia de uso
+### Guía de uso
 
 #### CLI (Command Line Interface - Interfaz de Línea de Comando)
 

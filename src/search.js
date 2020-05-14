@@ -1,39 +1,36 @@
 const fs = require('fs');
-const path = require('path');
-
+const marked = require('marked');
 const resolvepath = require('./resolvepath');
 
+// Devuelve contenido del directorio
 const contentDir = (testpath) => fs.readdirSync(testpath)
   .map((item) => `${testpath}\\${item}`);
 
-const Links = (fileMD) => 'estamos en funcion links';
+// Recorre archivo MD y devuelve links encontrados
+const Links = (fileMD) => {
+  const arrLinks = [];
+  const renderer = new marked.Renderer();
+  renderer.link = (href, title, text) => arrLinks.push({ href, text, fileMD });
+  marked(fs.readFileSync(fileMD, 'utf8'), { renderer });
+  return arrLinks;
+};
 
-
+// Recorre los distintos directorios buscando archivos MD
 const Files = (arrDir) => {
-  // const arrPart = [];
+  let arrPart = [];
+  // let arrTemp = [];
   arrDir.forEach((element) => {
     if (resolvepath.isFileMD(element)) {
-      console.log(`es un archivo md ${element}`);
-      // arrPart.push(Links(element));
+      arrPart = arrPart.concat(Links(element));
     } else if (resolvepath.isDir(element)) {
-      console.log(`es un directorio ${element}`);
-      Files(contentDir(element));
+      arrPart = arrPart.concat(Files(contentDir(element)));
     }
   });
+  return arrPart;
 };
 
-const FilesMD = (arrDir) => {
-  const arrFilesMd = [];
-  // if fileMD
-  // arrFilesMd.push(´${}\\name´);
-  return arrFilesMd;
+module.exports = {
+  contentDir,
+  Links,
+  Files,
 };
-
-// console.log(contentDir(path.resolve()));
-const arrx = contentDir(path.resolve());
-Files(arrx);
-// module.exports = {
-//   contentDir,
-//   Links,
-//   Files,
-// };
