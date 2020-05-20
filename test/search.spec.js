@@ -19,6 +19,10 @@ describe('Files', () => {
     const arrDir = search.contentDir(dt.route);
     expect(search.Files(arrDir)).toEqual(dt.linksDirResult);
   });
+  it('Devuelve [] si no encuentra links', () => {
+    const arrDirNone = search.contentDir(dt.routeNone);
+    expect(search.Files(arrDirNone)).toEqual([]);
+  });
 });
 
 describe('Links', () => {
@@ -27,5 +31,8 @@ describe('Links', () => {
   });
   it('Devuelve links de archivo MD', () => {
     expect(search.Links(dt.fileMD)).toEqual(dt.linksResult);
+  });
+  it('Devuelve [] si no encuentra links', () => {
+    expect(search.Links(dt.fileMDNone)).toEqual([]);
   });
 });

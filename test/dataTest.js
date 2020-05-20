@@ -8,8 +8,10 @@ const dirResult = [
   'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\example.md',
   'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\mate'];
 const route = path.resolve('test/clases');
+const routeNone = path.resolve('test/clases/cta');
 const badRoute = 'xyz';
 const fileMD = path.resolve('test/clases/example.md');
+const fileMDNone = path.resolve('test/clases/cta/enero/otro.md');
 const linksDirResult = [
   {
     href: 'https://gist.github.com/Danielalab/515830e8e4ec69d43b67759acd897714',
@@ -35,7 +37,7 @@ const linksDirResult = [
     href: 'https://www.google.com/',
     text: 'buscador',
     fileMD: 'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\mate\\negocio.md',
-  }
+  },
 ];
 const linksResult = [
   {
@@ -63,8 +65,10 @@ const linksResult = [
 module.exports = {
   dirResult,
   route,
+  routeNone,
   badRoute,
   fileMD,
+  fileMDNone,
   linksDirResult,
   linksResult,
 };
