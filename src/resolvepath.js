@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 const Abs = (checkPath) => (
   (path.isAbsolute(checkPath)) ? checkPath : path.resolve(checkPath));
 

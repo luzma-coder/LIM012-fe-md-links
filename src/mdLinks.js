@@ -1,28 +1,31 @@
 const resolvepath = require('./resolvepath');
 const search = require('./search');
-const valida = require('./valida');
+const validahref = require('./validahref.js');
 
-const mdLinks = (route, options) => {
-    let arrLinksFound= [];
-    if (IsValid(route)){
-        const u_path = resolvepath.Abs(route);
-        if (resolvepath.isFileMD(u_path)) {
-            arrLinksFound.push(search.Links(u_path));
-        } elseif (resolvepath.isDir(u_path)) {
-            arrLinksFound = arrLinksFound.push(search.Files(contentDir(u_path)));
-        }
-        if (arrLinksFound.length){
-            if (options.validate){
-                return valida.allLinks(arrLinksFound);
-            } else {
-                return arrLinksFound;
-            }
-        } else {
-            return 'Links no encontrados';
-        }
-    } else {
-        return 'Path invalido o no existe';
+const mdLinks = (route, options) => new Promise((resolve) => {
+  if (!search.isValid(route)) {
+    return 'ruta no existe o no es valida';
+  }
+  let arrLinksFound = [];
+  if (resolvepath.isFileMD(route)) {
+    arrLinksFound = search.Links(route);
+  } else if (resolvepath.isDir(route)) {
+    arrLinksFound = search.Files(search.contentDir(route));
+  }
+  if (arrLinksFound.length > 0) {
+    if (options.validate) {
+      arrLinksFound = validahref(arrLinksFound);
     }
-};
+  } else {
+    return 'no se encontraron links';
+  }
+  return resolve(arrLinksFound);
+});
 
-module.exports = { mdLinks };
+module.exports = mdLinks;
+
+// mdLinks('./test/clases', { validate: true }).then((res) => console.log(res.length));
+// validahref(linksResult).then((res) => console.log(res));
+
+// console.log(mdLinks('./test/clases/cta/enero'));
+// console.log(mdLinks('./test/clases'));
