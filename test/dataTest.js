@@ -62,6 +62,70 @@ const linksResult = [
   },
 ];
 
+const linksPromiseFalse = [
+  {
+    href: 'https://gist.github.com/Danielalab/515830e8e4ec69d43b67759acd897714',
+    text: 'condigurando babel',
+    fileMD: './test/clases/example.md',
+  },
+  {
+    href: 'aprendegit.com',
+    text: 'aprendegit.com',
+    fileMD: './test/clases/example.md',
+  },
+  {
+    href: 'https://www.google.com/',
+    text: 'google',
+    fileMD: './test/clases/example.md',
+  },
+  {
+    href: 'http://tecnops.es/testing-en-javascript-con-jest-parte-2-de-2/',
+    text: 'jest',
+    fileMD: './test/clases/example.md',
+  },
+];
+
+const linksValidate = [
+  {
+    href: 'https://gist.github.com/Danielalab/515830e8e4ec69d43b67759acd897714',
+    text: 'condigurando babel',
+    fileMD: 'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\example.md',
+    status: 'ok',
+    rpta: 200,
+  },
+  {
+    href: 'aprendegit.com',
+    text: 'aprendegit.com',
+    fileMD: 'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\example.md',
+    status: 'fail',
+    rpta: 'no url',
+  },
+  {
+    href: 'https://www.google.com/',
+    text: 'google',
+    fileMD: 'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\example.md',
+    status: 'ok',
+    rpta: 200,
+  },
+  {
+    href: 'http://tecnops.es/testing-en-javascript-con-jest-parte-2-de-2/',
+    text: 'jest',
+    fileMD: 'C:\\Users\\Estudiante\\Desktop\\LIM012-fe-md-links\\test\\clases\\example.md',
+    status: 'ok',
+    rpta: 200,
+  },
+];
+
+const linksPromiseTrue = [
+  {
+    href: 'https://www.google.com/',
+    text: 'buscador',
+    fileMD: './test/clases/mate/negocio.md',
+    status: 'ok',
+    rpta: 200,
+  },
+];
+
 module.exports = {
   dirResult,
   route,
@@ -71,4 +135,7 @@ module.exports = {
   fileMDNone,
   linksDirResult,
   linksResult,
+  linksPromiseFalse,
+  linksPromiseTrue,
+  linksValidate,
 };
