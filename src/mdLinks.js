@@ -24,7 +24,7 @@ const mdLinks = (route, options) => new Promise((resolve) => {
 
 module.exports = mdLinks;
 
-// mdLinks('./test/clases', { validate: true }).then((res) => console.log(res.length));
+// mdLinks('./test/clases/mate/negocio.md', { validate: true }).then((res) => console.log(res));
 // validahref(linksResult).then((res) => console.log(res));
 
 // console.log(mdLinks('./test/clases/cta/enero'));
