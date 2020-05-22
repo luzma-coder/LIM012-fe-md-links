@@ -25,9 +25,11 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "jest": "^25.5.4",
-    "marked": "^1.0.0"
+    "marked": "^1.0.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "eslint-plugin-jest": "^23.9.0"
+    "eslint-plugin-jest": "^23.9.0",
+    "fetch-mock": "^9.9.1"
   }
 }
