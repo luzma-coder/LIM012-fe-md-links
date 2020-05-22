@@ -99,8 +99,8 @@ npm install --global luzma-coder/md-links
 
 ### Javascript
 - [x] Uso de callbacks
-- [ ] Consumo de Promesas
-- [ ] Creacion de Promesas
+- [x] Consumo de Promesas
+- [x] Creacion de Promesas
 - [x] Modulos de Js
 - [x] Recursión
 
@@ -114,7 +114,7 @@ npm install --global luzma-coder/md-links
 
 ### Testing
 - [x] Testeo de tus funciones
-- [ ] Testeo asíncrono
+- [x] Testeo asíncrono
 - [ ] Uso de librerias de Mock
 - [ ] Mocks manuales
 - [ ] Testeo para multiples Sistemas Operativos
@@ -128,4 +128,3 @@ npm install --global luzma-coder/md-links
 - [x] Linting
 
 ***
-
