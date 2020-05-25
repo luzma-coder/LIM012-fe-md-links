@@ -12,15 +12,19 @@
   },
   "keywords": [
     "links",
-    "md"
+    "file md"
   ],
   "author": "Luz Marina",
   "license": "MIT",
+  "bin": {
+    "md-links": "./src/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/luzma-coder/LIM012-fe-md-links/issues"
   },
   "homepage": "https://github.com/luzma-coder/LIM012-fe-md-links#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
