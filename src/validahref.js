@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
 
 const validahref = (arrLinksFound) => {
-  const arrPromises = arrLinksFound.map((element) => new Promise((resolve) => fetch(element.href)
+  const arrlinks = arrLinksFound;
+  const arrPromises = arrlinks.map((element) => new Promise((resolve) => fetch(element.href)
     .then((res) => {
-      element.status = (res.statusText === 'OK' ? 'ok' : 'fail'); // ok o fail
+      element.status = ((res.status >= 200) ? 'ok' : 'fail'); // ok o fail
       element.rpta = res.status; // 200 400 404
       resolve(element);
     })
