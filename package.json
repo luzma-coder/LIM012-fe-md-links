@@ -16,9 +16,7 @@
   ],
   "author": "Luz Marina",
   "license": "MIT",
-  "bin": {
-    "md-links": "./src/cli.js"
-  },
+  "bin": "src/cli.js",
   "bugs": {
     "url": "https://github.com/luzma-coder/LIM012-fe-md-links/issues"
   },
