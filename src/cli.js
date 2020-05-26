@@ -3,9 +3,9 @@ const color = require('colors');
 const mdlinks = require('./mdLinks.js');
 
 const arg = process.argv;
-const route = arg[1]; // cambiar a 1 cuando funcione md-links
-const arg1 = arg[2];
-const arg2 = arg[3];
+const route = arg[2]; // cambiar a 1 cuando funcione md-links
+const arg1 = arg[3];
+const arg2 = arg[4];
 const options = ['--validate', '--stats'];
 const help = `
 ====================== help =======================
@@ -50,16 +50,16 @@ ${element.fileMD} ${color.cyan(element.href)} ${element.text.substring(0, 50)}`)
 };
 
 // de acuerdo a lo solicitado por el usuario se imprime en consola
-if (arg.length === 1) {
+if (arg.length === 2) {
   console.log(help);
 } else {
   switch (arg.length) {
-    case 2:
+    case 3:
       mdlinks(route, { validate: false })
         .then((res) => console.log(printLinks(res, false)))
         .catch(console.error);
       break;
-    case 3:
+    case 4:
       if (arg1 === '--validate') {
         mdlinks(route, { validate: true })
           .then((res) => console.log(printLinks(res, true)));
@@ -68,7 +68,7 @@ if (arg.length === 1) {
           .then((res) => console.log(printStats(res, false)));
       } else console.log(help);
       break;
-    case 4:
+    case 5:
       if (options.includes(arg2) && arg1 !== arg2) {
         mdlinks(route, { validate: true })
           .then((res) => console.log(printStats(res, true)));
