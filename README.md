@@ -110,7 +110,7 @@ npm install --global luzma-coder/md-links
 - [x] crear modules
 - [x] Instalar y usar modules
 - [ ] npm scripts
-- [ ] CLI (Command Line Interface - Interfaz de Línea de Comando)
+- [x] CLI (Command Line Interface - Interfaz de Línea de Comando)
 
 ### Testing
 - [x] Testeo de tus funciones
