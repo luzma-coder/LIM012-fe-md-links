@@ -2,8 +2,10 @@ const fs = require('fs');
 const marked = require('marked');
 const resolvepath = require('./resolvepath');
 
+const noDir = ['.', '..'];
+
 // Devuelve boolean si ruta es valida ej: ./test/clases/arte o test/clases/example.md
-const isValid = (testroute) => ((testroute === '.' || testroute === '..') ? false : fs.existsSync(testroute));
+const isValid = (testroute) => (noDir.includes(testroute) ? false : fs.existsSync(testroute));
 
 // Devuelve contenido del directorio
 const contentDir = (testpath) => fs.readdirSync(testpath)
